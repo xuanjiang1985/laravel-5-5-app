@@ -25,8 +25,15 @@ Route::post('/jacklogin','Admin\LoginController@postLogin')->name('admin.login')
 Route::prefix('jackadmin')->namespace('Admin')->middleware(['admin'])->group(function(){
 	Route::get('/','LoginController@index')->name('admin');
 	Route::get('/logout','LoginController@getLogout')->name('admin.logout');
+
 	Route::middleware(['role:superAdmin|admin'])->group( function(){
 		Route::get('/demo1','LoginController@demo1')->name('admin.demo1');
 		Route::get('/demo2','LoginController@demo2')->name('admin.demo2');
+		Route::get('/role','PermissionController@roleIndex')->name('admin.role');
+		Route::get('/role/dispatch/{id}','PermissionController@roleDispatch')->name('admin.roleDispatch');
+		Route::post('/role/dispatch/{id}','PermissionController@roleDispatched')->name('admin.roleDispatched');
+		Route::get('/role/delete/{id}','PermissionController@roleDelete')->name('admin.roleDelete');
+		Route::post('/role/delete/{id}','PermissionController@roleDeleted')->name('admin.roleDeleted');
+		Route::get('/permission','PermissionController@permissionIndex')->name('admin.permission');
 	});
 });

@@ -73,7 +73,8 @@
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <img src="/images/user2-160x160.jpg" class="user-image" alt="User Image">
               @if(Auth::guard('admin')->check())
-              <span class="hidden-xs">{{ Auth::guard('admin')->user()->name }}</span>
+              <span class="hidden-xs">{{ Auth::guard('admin')->user()->name }} <i class="fa fa-angle-down"></i></span>
+
               @else
               <span class="hidden-xs">未登录</span>
               @endif
@@ -85,11 +86,14 @@
 
                 <p>
                   @if(Auth::guard('admin')->check())
-                  {{ Auth::guard('admin')->user()->name }} - Administrator
+                  {{ Auth::guard('admin')->user()->name }}
                   @else
                   未登录 - 身份
                   @endif
-                  <small>Member since Nov. 2012</small>
+                  <?php $roles = Auth::guard('admin')->user()->Roles; ?>
+                  @foreach($roles as $role)
+                  <small>{{ $role->display_name }}</small>
+                  @endforeach
                 </p>
               </li>
               <!-- Menu Body -->
@@ -167,8 +171,9 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="{{ route('admin.demo1') }}"><i class="fa fa-circle-o"></i> 角色分配</a></li>
-            <li><a href="{{ route('admin.demo2') }}"><i class="fa fa-circle-o"></i> 角色权限</a></li>
+            <li><a href="{{ route('admin.role') }}"><i class="fa fa-circle-o"></i> 角色分配</a></li>
+            <li><a href="{{ route('admin.permission') }}"><i class="fa fa-circle-o"></i> 权限分配</a></li>
+            <li><a href="{{ route('admin.demo1') }}"><i class="fa fa-circle-o"></i> 管理员设置</a></li>
           </ul>
         </li>
         <!-- <li><a href="https://adminlte.io/docs"><i class="fa fa-book"></i> <span>Documentation</span></a></li> -->

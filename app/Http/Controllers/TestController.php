@@ -26,6 +26,8 @@ class TestController extends Controller
 
 		// $admin = Role::where('name','admin')->first();
 		// $admin->attachPermission($createPost);
+		$user = User::find(1);
+		dd($user->Roles);
 		return 'success';
     }
 }
