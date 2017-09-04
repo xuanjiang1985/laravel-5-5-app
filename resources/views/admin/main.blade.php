@@ -149,7 +149,7 @@
         <li class="header">导航栏</li>
         <li class="treeview">
           <a href="#">
-            <i class="fa fa-users"></i> <span>权限管理</span>
+            <i class="fa fa-users"></i> <span>权限测试管理</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
@@ -157,6 +157,18 @@
           <ul class="treeview-menu">
             <li><a href="{{ route('admin.demo1') }}"><i class="fa fa-circle-o"></i> demo v1</a></li>
             <li><a href="{{ route('admin.demo2') }}"><i class="fa fa-circle-o"></i> demo v2</a></li>
+          </ul>
+        </li>
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-users"></i> <span>权限管理</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="{{ route('admin.demo1') }}"><i class="fa fa-circle-o"></i> 角色分配</a></li>
+            <li><a href="{{ route('admin.demo2') }}"><i class="fa fa-circle-o"></i> 角色权限</a></li>
           </ul>
         </li>
         <!-- <li><a href="https://adminlte.io/docs"><i class="fa fa-book"></i> <span>Documentation</span></a></li> -->
