@@ -28,6 +28,11 @@ class RolesSeeder extends Seeder
                 'display_name' => '文章管理员',
                 'description' => '管理文章',
             ],
+            [   
+                'name' => 'editor',
+                'display_name' => '非正式管理员',
+                'description' => '管理文章',
+            ],
         ]);
     }
 }

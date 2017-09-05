@@ -40,6 +40,9 @@ class LoginController extends Controller
 
     public function demo1()
     {
+        if(!Auth::guard('admin')->user()->hasRole('superAdmin')) { 
+            abort(403);
+        }
         return view('admin.demo1');
     }
 

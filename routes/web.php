@@ -35,5 +35,6 @@ Route::prefix('jackadmin')->namespace('Admin')->middleware(['admin'])->group(fun
 		Route::get('/role/delete/{id}','PermissionController@roleDelete')->name('admin.roleDelete');
 		Route::post('/role/delete/{id}','PermissionController@roleDeleted')->name('admin.roleDeleted');
 		Route::get('/permission','PermissionController@permissionIndex')->name('admin.permission');
+		Route::get('/permission/attach/{id}','PermissionController@permissionAttach')->name('admin.permissionAttach');
 	});
 });

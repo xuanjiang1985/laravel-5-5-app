@@ -7,9 +7,16 @@ use App\Http\Controllers\Controller;
 use App\Role;
 use App\Permission;
 use App\User;
+use Auth;
+use DB;
 
 class PermissionController extends Controller
 {
+	public function __construct()
+    {
+    	 $this->middleware('role:superAdmin');
+    }
+
     public function roleIndex()
     {
     	$managers = User::where('admin',1)->orderBy('id')->get();
@@ -53,6 +60,9 @@ class PermissionController extends Controller
     		abort(403);
     	}
     	$user = User::findOrFail($id);
+    	if($user->Roles->isEmpty()){
+    		return back()->withInput()->withErrors('该管理员无任何角色');
+    	}
     	return view('admin.permission.roleDelete',['userRoles' => $user->Roles,
     													'user' => $user
     												]);
@@ -72,6 +82,19 @@ class PermissionController extends Controller
 
     public function permissionIndex()
     {
-    	return view('admin.permission.permission');
+    	$roles = Role::whereNotin('name',['superAdmin'])->get();
+    	return view('admin.permission.permission', ['roles' => $roles]);
+    }
+
+    //role->id
+    public function permissionAttach($id)
+    {
+    	$role = Role::find($id);
+    	$permissions = Permission::all();
+    	$hasPermissions = DB::table('permission_role')->where('role_id', $id)->pluck('permission_id')->toArray();
+    	return view('admin.permission.permissionAttach', ['permissions' => $permissions,
+    														'hasPermissions' => $hasPermissions,
+    														'role' => $role
+    														]);
     }
 }

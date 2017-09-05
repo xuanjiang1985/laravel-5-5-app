@@ -172,7 +172,7 @@
           </a>
           <ul class="treeview-menu">
             <li><a href="{{ route('admin.role') }}"><i class="fa fa-circle-o"></i> 角色分配</a></li>
-            <li><a href="{{ route('admin.permission') }}"><i class="fa fa-circle-o"></i> 权限分配</a></li>
+            <li><a href="{{ route('admin.permission') }}"><i class="fa fa-circle-o"></i> 角色权限设置</a></li>
             <li><a href="{{ route('admin.demo1') }}"><i class="fa fa-circle-o"></i> 管理员设置</a></li>
           </ul>
         </li>
