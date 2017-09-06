@@ -4,8 +4,8 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use Auth;
-use Log;
+use App\Http\Requests\AdminChangePassword;
+use Auth, Log, Hash;
 
 class LoginController extends Controller
 {
@@ -36,6 +36,25 @@ class LoginController extends Controller
     {
         Auth::guard('admin')->logout();
         return redirect()->route('admin.login');
+    }
+
+    public function changePassword()
+    {
+        $user = Auth::guard('admin')->user();
+        return view('admin.changePassword',['user' => $user]);
+    }
+
+    public function changedPassword(AdminChangePassword $request)
+    {
+        $user = Auth::guard('admin')->user();
+        if (!Hash::check($request->input('旧密码'), $user->password)) {
+            return back()->withErrors('验证旧密码不对。')->withInput();
+        }
+        $user->fill([
+            'password' => Hash::make($request->input('新密码'))
+            ])->save();
+        Log::info($user->email.' 修改了自己的密码。');
+        return back()->with('status','密码修改成功。');
     }
 
     public function demo1()

@@ -15,14 +15,12 @@ let mix = require('laravel-mix');
 mix.styles([
 	'public/css/bootstrap.min.css',
 	'public/css/front.css',
-	'public/css/admin.css'
 ], 	'public/css/all.css')
 .scripts([
-	'resources/assets/js/jquery-1.12.4.min.js',
-	'resources/assets/js/bootstrap.min.js',
-    //'public/js/app.js',
-    'public/js/front.js',
-    'public/js/admin.js'
+	//'resources/assets/js/jquery-1.12.4.min.js',
+	'public/js/jquery-3.2.1.min.js',
+	'public/js/bootstrap.min.js',
+    'public/js/front.js'
 ], 	'public/js/all.js').version();
 
 // if (mix.inProduction()) {

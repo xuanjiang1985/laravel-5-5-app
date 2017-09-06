@@ -9,6 +9,7 @@ use App\Permission;
 use App\User;
 use Auth;
 use DB;
+use Log;
 
 class PermissionController extends Controller
 {
@@ -49,6 +50,7 @@ class PermissionController extends Controller
     	}
     	$user = User::findOrFail($id);
     	$user->attachRoles($request->input('checkbox'));
+        Log::info(Auth::guard('admin')->user()->email.'操作了分配角色->'.$user->email);
     	return redirect()->route('admin.role');
     }
 
@@ -63,6 +65,7 @@ class PermissionController extends Controller
     	if($user->Roles->isEmpty()){
     		return back()->withInput()->withErrors('该管理员无任何角色');
     	}
+
     	return view('admin.permission.roleDelete',['userRoles' => $user->Roles,
     													'user' => $user
     												]);
@@ -77,6 +80,7 @@ class PermissionController extends Controller
     	}
     	$user = User::findOrFail($id);
     	$user->detachRoles($request->input('checkbox'));
+        Log::info(Auth::guard('admin')->user()->email.'操作了删除角色->'.$user->email);
     	return redirect()->route('admin.role');
     }
 
@@ -96,5 +100,13 @@ class PermissionController extends Controller
     														'hasPermissions' => $hasPermissions,
     														'role' => $role
     														]);
+    }
+    //role->id
+    public function permissionAttached(Request $request, $id)
+    {
+    	$role = Role::find($id);
+    	$role->perms()->sync($request->input('checkbox'));
+        Log::info(Auth::guard('admin')->user()->email.'操作了删除角色->user_id:'.$id);
+    	return redirect()->route('admin.permission')->with('status','操作成功。');
     }
 }

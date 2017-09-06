@@ -14,7 +14,6 @@
       <!--[if lt IE 9]>
          <script src="/js/html5shiv.js"></script>
          <script src="/js/respond.min.js"></script>
-         <link rel="stylesheet" href="/fonts/css/font-awesome-ie7.min.css">
       <![endif]-->
 </head>
 <body>

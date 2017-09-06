@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0 minimum-scale=1.0 maximum-scale=1.0 user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     @yield('title')
-    <link rel="stylesheet" href="{{ mix('/css/all.css') }}">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/admin.css">
     <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="/css/AdminLTE.min.css">
     <link rel="stylesheet" href="/css/_all-skins.min.css">
@@ -14,7 +15,6 @@
       <!--[if lt IE 9]>
          <script src="/js/html5shiv.js"></script>
          <script src="/js/respond.min.js"></script>
-         <link rel="stylesheet" href="/fonts/css/font-awesome-ie7.min.css">
       <![endif]-->
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
@@ -114,7 +114,7 @@
               <!-- Menu Footer-->
               <li class="user-footer">
                 <div class="pull-left">
-                  <a href="#" class="btn btn-default btn-flat">设置</a>
+                  <a href="{{ route('admin.changePassword') }}" class="btn btn-default btn-flat">修改密码</a>
                 </div>
                 <div class="pull-right">
                   <a href="{{ route('admin.logout') }}" class="btn btn-default btn-flat">退出</a>
@@ -153,7 +153,7 @@
         <li class="header">导航栏</li>
         <li class="treeview">
           <a href="#">
-            <i class="fa fa-users"></i> <span>权限测试管理</span>
+            <i class="fa fa-users"></i> <span>测试管理</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
@@ -195,6 +195,8 @@
   </footer>
 </div>
 </body>
-<script src="{{ mix('/js/all.js') }}"></script>
+<script src="/js/jquery-1.12.4.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/admin.js"></script>
 <script src="/js/adminlte.min.js"></script>
 </html>

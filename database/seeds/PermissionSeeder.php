@@ -14,6 +14,7 @@ class PermissionSeeder extends Seeder
     {
         Permission::insert([
         	[	
+                'item' => 1,
         		'name' => 'create-post',
         		'display_name' => '创建邮箱',
         		'description' => '',
@@ -29,6 +30,7 @@ class PermissionSeeder extends Seeder
         		'description' => '',
         	],
         	[	
+                'item' => 1,
         		'name' => 'delete-article',
         		'display_name' => '删除文章',
         		'description' => '',

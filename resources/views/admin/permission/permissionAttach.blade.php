@@ -16,13 +16,18 @@
 	</div>
 	<div class="container">
 		<br>
-		<form class="form-horizontal" method="post" action="">
+		<form class="form-horizontal" method="post" action="{{ route('admin.permissionAttached', ['id' => $role->id]) }}">
 		{!! csrf_field() !!}
 			<div class="form-group">
 				@foreach($permissions as $permission)
-				    <label class="checkbox-inline">
-				    	<input type="checkbox" value="{{ $permission->id }}" name="checkbox[]">{{ $permission->display_name }}
-				    </label>
+					    <label class="checkbox-inline">
+					    @if(in_array($permission->id, $hasPermissions))
+					    	<input type="checkbox" value="{{ $permission->id }}" name="checkbox[]" checked="checked">{{ $permission->display_name }}
+					    @else
+					    	<input type="checkbox" value="{{ $permission->id }}" name="checkbox[]">{{ $permission->display_name }}
+					    @endif
+					    </label>
+					@if($permission->item == 1) <hr> @endif
 				@endforeach
 			</div>
 			<div class="form-group">

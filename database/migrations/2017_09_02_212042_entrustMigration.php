@@ -38,6 +38,7 @@ class EntrustMigration extends Migration
         // Create table for storing permissions
         Schema::create('permissions', function (Blueprint $table) {
             $table->increments('id');
+            $table->tinyInteger('newline')->default(0)->comment('if value = 1, newline');
             $table->string('name',128)->unique();
             $table->string('display_name')->nullable();
             $table->string('description')->nullable();

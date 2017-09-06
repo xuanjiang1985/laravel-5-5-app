@@ -1,7 +1,7 @@
 @extends('admin.main')
 
 @section('title')
-<title>role page</title>
+<title>admin page</title>
 @endsection
 
 @section('content')

@@ -12,7 +12,7 @@
 		<i class="fa fa-angle-double-right"></i>
 		角色权限设置
 	</div>
-	@include('errors.error')
+	@include('errors.success')
 	<div class="table-responsive">
 		<table class="table">
 			<thead>
