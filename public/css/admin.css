@@ -1,2 +1,10 @@
 #admin-content {background-color: white;padding: 0 6px;}
 #nav-line {padding-top: 5px;margin-bottom: 10px; color: #969696;}
+#ajax-status {display: none; 
+	position: fixed;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+	padding:10px 15px;border-radius: 5px;background-color: rgba(0,0,0,0.3);
+}

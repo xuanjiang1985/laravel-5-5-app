@@ -5,11 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0 minimum-scale=1.0 maximum-scale=1.0 user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     @yield('title')
-    <link rel="stylesheet" href="/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/css/admin.css">
+    <link rel="stylesheet" href="{{ mix('/css/all-admin.css') }}">
     <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="/css/AdminLTE.min.css">
-    <link rel="stylesheet" href="/css/_all-skins.min.css">
+    <script src="/js/jquery-1.12.4.min.js"></script>
     <!-- HTML5 Shim 和 Respond.js 用于让 IE8 支持 HTML5元素和媒体查询 -->
       <!-- 注意： 如果通过 file://  引入 Respond.js 文件，则该文件无法起效果 -->
       <!--[if lt IE 9]>
@@ -153,6 +151,19 @@
         <li class="header">导航栏</li>
         <li class="treeview">
           <a href="#">
+            <i class="fa fa-users"></i> <span>权限管理</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="{{ route('admin.role') }}"><i class="fa fa-circle-o"></i> 角色分配</a></li>
+            <li><a href="{{ route('admin.permission') }}"><i class="fa fa-circle-o"></i> 角色权限设置</a></li>
+            <li><a href="{{ route('admin.manager') }}"><i class="fa fa-circle-o"></i> 管理员设置</a></li>
+          </ul>
+        </li>
+        <li class="treeview">
+          <a href="#">
             <i class="fa fa-users"></i> <span>测试管理</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
@@ -163,19 +174,7 @@
             <li><a href="{{ route('admin.demo2') }}"><i class="fa fa-circle-o"></i> demo v2</a></li>
           </ul>
         </li>
-        <li class="treeview">
-          <a href="#">
-            <i class="fa fa-users"></i> <span>权限管理</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            <li><a href="{{ route('admin.role') }}"><i class="fa fa-circle-o"></i> 角色分配</a></li>
-            <li><a href="{{ route('admin.permission') }}"><i class="fa fa-circle-o"></i> 角色权限设置</a></li>
-            <li><a href="{{ route('admin.demo1') }}"><i class="fa fa-circle-o"></i> 管理员设置</a></li>
-          </ul>
-        </li>
+        
         <!-- <li><a href="https://adminlte.io/docs"><i class="fa fa-book"></i> <span>Documentation</span></a></li> -->
         <li class="header">标签</li>
         <li><a href="#"><i class="fa fa-circle-o text-red"></i> <span>Important</span></a></li>
@@ -186,7 +185,7 @@
     <!-- /.sidebar -->
   </aside>
 @yield('content')
-<footer class="main-footer">
+  <footer class="main-footer">
     <div class="pull-right hidden-xs">
       <b>Version</b> 2.4.0
     </div>
@@ -194,9 +193,7 @@
     reserved.
   </footer>
 </div>
+<div id="ajax-status"> </div>
 </body>
-<script src="/js/jquery-1.12.4.min.js"></script>
-<script src="/js/bootstrap.min.js"></script>
-<script src="/js/admin.js"></script>
-<script src="/js/adminlte.min.js"></script>
+<script src="{{ mix('/js/all-admin.js') }}"></script>
 </html>

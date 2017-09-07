@@ -6,7 +6,7 @@
 
 @section('content')
 <div class="content-wrapper" id="admin-content">
-	<div id="nav-line">
+	<div id="nav-line" data-treeview="1" data-treeview-menu="1">
 		<i class="fa fa-map-marker"></i>
 		权限管理
 		<i class="fa fa-angle-double-right"></i>
@@ -14,7 +14,7 @@
 	</div>
 	@include('errors.error')
 	<div class="table-responsive">
-		<table class="table">
+		<table class="table table-hover">
 			<thead>
 			    <tr>
 			      <th>管理员昵称</th>
