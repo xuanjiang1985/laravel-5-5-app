@@ -12,6 +12,11 @@
 		<i class="fa fa-angle-double-right"></i>
 		管理员设置
 	</div>
+	<div>
+		<a href="{{ route('admin.managerCreate') }}" class="pull-right btn btn-primary"><i class="fa fa-plus"></i> 添加管理员</a>
+	</div>
+	<div class="clearfix"></div>
+	<br>
 	@include('errors.error')
 	@include('errors.success')
 	<div class="table-responsive">

@@ -44,5 +44,7 @@ Route::prefix('jackadmin')->namespace('Admin')->middleware(['admin'])->group(fun
 		Route::get('manager/show/{id}','ManagerController@show')->name('admin.managerShow');
 		Route::put('manager/update/{id}','ManagerController@update')->name('admin.managerUpdate');
 		Route::delete('manager/delete/{id}','ManagerController@delete')->name('admin.managerDelete');
+		Route::get('manager/create','ManagerController@create')->name('admin.managerCreate');
+		Route::post('manager/store','ManagerController@store')->name('admin.managerStore');
 	});
 });
