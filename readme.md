@@ -1,4 +1,4 @@
-<p align="center"><img src="https://github.com/xuanjiang1985/laravel-5-5-app/edit/master/public/images/shot.png"></p>
+<p align="center"><img src="https://github.com/xuanjiang1985/laravel-5-5-app/tree/master/public/images/shot.png"></p>
 
 
 <p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
