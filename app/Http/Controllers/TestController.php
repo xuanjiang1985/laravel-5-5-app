@@ -264,88 +264,88 @@ class TestController extends Controller
   <county name="宽城满族自治县" value="kuanchengxian" /> 
   <county name="围场满族蒙古族自治县" value="weichangxian" /> 
   </city>
- <city name="沧州市">
+ <city name="沧州市" value="cangzhou">
   <county name="市辖区" /> 
-  <county name="新华区" /> 
-  <county name="运河区" /> 
-  <county name="沧县" /> 
-  <county name="青县" /> 
-  <county name="东光县" /> 
-  <county name="海兴县" /> 
-  <county name="盐山县" /> 
-  <county name="肃宁县" /> 
-  <county name="南皮县" /> 
-  <county name="吴桥县" /> 
-  <county name="献县" /> 
-  <county name="孟村回族自治县" /> 
-  <county name="泊头市" /> 
-  <county name="任丘市" /> 
-  <county name="黄骅市" /> 
-  <county name="河间市" /> 
+  <county name="新华区" value="czxinhua" /> 
+  <county name="运河区" value="yunhe" /> 
+  <county name="沧县" value="cangxian" /> 
+  <county name="青县" value="qignxian" /> 
+  <county name="东光县" value="dongguang" /> 
+  <county name="海兴县" value="haixing" /> 
+  <county name="盐山县" value="yanshanxian" /> 
+  <county name="肃宁县" value="suning" /> 
+  <county name="南皮县" value="nanpi" /> 
+  <county name="吴桥县" value="wuqiao" /> 
+  <county name="献县" value="czxianxian" /> 
+  <county name="孟村回族自治县" value="mengcun" /> 
+  <county name="泊头市" value="botou" /> 
+  <county name="任丘市" value="cangzhourenqiu" /> 
+  <county name="黄骅市" value="huanghua" /> 
+  <county name="河间市" value="hejian" /> 
   </city>
- <city name="廊坊市">
-  <county name="市辖区" /> 
-  <county name="安次区" /> 
-  <county name="广阳区" /> 
-  <county name="固安县" /> 
-  <county name="永清县" /> 
-  <county name="香河县" /> 
-  <county name="大城县" /> 
-  <county name="文安县" /> 
-  <county name="大厂回族自治县" /> 
-  <county name="霸州市" /> 
-  <county name="三河市" /> 
+ <city name="廊坊市" value="lf">
+  <county name="市辖区" value="" /> 
+  <county name="安次区" value="anci" /> 
+  <county name="广阳区" value="lfguangyang" /> 
+  <county name="固安县" value="lfguan" /> 
+  <county name="永清县" value="yongqing" /> 
+  <county name="香河县" value="xianghe" /> 
+  <county name="大城县" value="dachengxian" /> 
+  <county name="文安县" value="lfwenan" /> 
+  <county name="大厂回族自治县" value="dachang" /> 
+  <county name="霸州市" value="bazhou" /> 
+  <county name="三河市" value="langfangsanhe" /> 
   </city>
- <city name="衡水市">
-  <county name="市辖区" /> 
-  <county name="桃城区" /> 
-  <county name="枣强县" /> 
-  <county name="武邑县" /> 
-  <county name="武强县" /> 
-  <county name="饶阳县" /> 
-  <county name="安平县" /> 
-  <county name="故城县" /> 
-  <county name="景县" /> 
-  <county name="阜城县" /> 
-  <county name="冀州市" /> 
-  <county name="深州市" /> 
+ <city name="衡水市" value="hs">
+  <county name="市辖区" value="" /> 
+  <county name="桃城区" value="taocheng" /> 
+  <county name="枣强县" value="zaoqiang" /> 
+  <county name="武邑县" value="hswy" /> 
+  <county name="武强县" value="wuqiang" /> 
+  <county name="饶阳县" value="raoyang" /> 
+  <county name="安平县" value="anping" /> 
+  <county name="故城县" value="guchengxian" /> 
+  <county name="景县" value="jingxian" /> 
+  <county name="阜城县" value="fucheng" /> 
+  <county name="冀州市" value="jizhou" /> 
+  <county name="深州市" value="hsshouzhou" /> 
   </city>
   </province>
  <province name="山西省">
- <city name="太原市">
-  <county name="市辖区" /> 
-  <county name="小店区" /> 
-  <county name="迎泽区" /> 
-  <county name="杏花岭区" /> 
-  <county name="尖草坪区" /> 
-  <county name="万柏林区" /> 
-  <county name="晋源区" /> 
-  <county name="清徐县" /> 
-  <county name="阳曲县" /> 
-  <county name="娄烦县" /> 
-  <county name="古交市" /> 
+ <city name="太原市" value="ty">
+  <county name="市辖区" value="" /> 
+  <county name="小店区" value="xiaodian" /> 
+  <county name="迎泽区" value="yingze" /> 
+  <county name="杏花岭区" value="xinghualing" /> 
+  <county name="尖草坪区" value="jiancaoping" /> 
+  <county name="万柏林区" value="wanbolin" /> 
+  <county name="晋源区" value="jinyuan" /> 
+  <county name="清徐县" value="" /> 
+  <county name="阳曲县" value="" /> 
+  <county name="娄烦县" value="" /> 
+  <county name="古交市" value="" /> 
   </city>
- <city name="大同市">
-  <county name="市辖区" /> 
-  <county name="城区" /> 
-  <county name="矿区" /> 
-  <county name="南郊区" /> 
-  <county name="新荣区" /> 
-  <county name="阳高县" /> 
-  <county name="天镇县" /> 
-  <county name="广灵县" /> 
-  <county name="灵丘县" /> 
-  <county name="浑源县" /> 
-  <county name="左云县" /> 
-  <county name="大同县" /> 
+ <city name="大同市" value="dt">
+  <county name="市辖区" value="" /> 
+  <county name="城区" value="" /> 
+  <county name="矿区" value="kuangqu" /> 
+  <county name="南郊区" value="nanjiaoqu" /> 
+  <county name="新荣区" value="xinrongqu" /> 
+  <county name="阳高县" value="yanggaoxian" /> 
+  <county name="天镇县" value="tianzhenxian" /> 
+  <county name="广灵县" value="guanglingxian" /> 
+  <county name="灵丘县" value="lingqiuxian" /> 
+  <county name="浑源县" value="hunyuanxian" /> 
+  <county name="左云县" value="zuoyunxian" /> 
+  <county name="大同县" value="datongqu" /> 
   </city>
- <city name="阳泉市">
-  <county name="市辖区" /> 
-  <county name="城区" /> 
-  <county name="矿区" /> 
-  <county name="郊区" /> 
-  <county name="平定县" /> 
-  <county name="盂县" /> 
+ <city name="阳泉市" value="yq">
+  <county name="市辖区" value="yqsxq" /> 
+  <county name="城区" value="chengquq" /> 
+  <county name="矿区" value="kuangquq" /> 
+  <county name="郊区" value="jiaoquq" /> 
+  <county name="平定县" value="pingdingxian" /> 
+  <county name="盂县" value="yuxian" /> 
   </city>
  <city name="长治市">
   <county name="市辖区" /> 
