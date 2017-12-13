@@ -5,6 +5,7 @@ namespace App\Console;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 use App\Console\Commands\AddressCommand;
+use App\Console\Commands\ProvinceToName;
 
 class Kernel extends ConsoleKernel
 {
@@ -14,7 +15,8 @@ class Kernel extends ConsoleKernel
      * @var array
      */
     protected $commands = [
-        AddressCommand::class
+        AddressCommand::class,
+        ProvinceToName::class
     ];
 
     /**
