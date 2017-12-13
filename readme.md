@@ -1,13 +1,13 @@
-php artisan migrate
+```php artisan migrate```
 
 
-php artisan de:seed
+```php artisan de:seed```
 
 
-npm install
+```npm install```
 
 
-npm run dev
+```npm run dev```
 
 <p align="center"><img src="https://github.com/xuanjiang1985/laravel-5-5-app/blob/master/public/images/shot.png"></p>
 
