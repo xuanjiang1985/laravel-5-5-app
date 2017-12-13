@@ -10,13 +10,19 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/test', 'TestController@test');
+Route::get('/test', 'TestController@test3');
+Route::get('/city', 'TestController@cityedit');
+Route::get('/city/{id}', 'TestController@cityget');
+Route::get('/district/{id}', 'TestController@districtget');
+Route::get('/districtupdate', 'TestController@districtupdate');
+Route::get('/friend/{city}', 'TestController@collectFriend');
+Route::get('/provincetoname', 'TestController@provinceToName');
 // Route::get('/info', function () {
 //    echo phpinfo();
 // });
 
 Route::get('/', function () {
-    return view('index');
+    return 1;
 });
 Route::get('/login', 'LoginController@getLogin');
 //admin center login

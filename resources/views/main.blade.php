@@ -28,4 +28,5 @@
     <div id="back-to-top"><span class="fa fa-arrow-up fa-3x"></span></div>
 </body>
 <script src="{{ mix('/js/all.js') }}"></script>
+@stack('scripts')
 </html>

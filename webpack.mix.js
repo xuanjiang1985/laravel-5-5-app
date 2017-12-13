@@ -18,7 +18,7 @@ mix.styles([
 ], 	'public/css/all.css')
 .scripts([
 	//'resources/assets/js/jquery-1.12.4.min.js',
-	'public/js/jquery-3.2.1.min.js',
+	'public/js/jquery-1.12.4.min.js',
 	'public/js/bootstrap.min.js',
     'public/js/front.js'
 ], 	'public/js/all.js').version();
