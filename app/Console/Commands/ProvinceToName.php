@@ -42,33 +42,33 @@ class ProvinceToName extends Command
     public function handle()
     { 
       // 招聘 写入主数据 fuli 转数组
-      for ($i=1; $i <= 1; $i++) { 
-          $row = CollectData1Model::where('id', $i)->get();
-          if ($row->isEmpty()) {
-            continue;
-          }
+      // for ($i=1; $i <= 6460; $i++) { 
+      //     $row = CollectData1Model::where('id', $i)->get();
+      //     if ($row->isEmpty()) {
+      //       continue;
+      //     }
 
-          $provinceId = $row->first()->province;
-          $province = CityModel::where('id', $provinceId)->get();
-          if ($province->isEmpty()) {
-            continue;
-          }
+      //     $provinceId = $row->first()->province;
+      //     $province = CityModel::where('id', $provinceId)->get();
+      //     if ($province->isEmpty()) {
+      //       continue;
+      //     }
 
-          $content = $row->first()->content;
-          $contentArr = json_decode($content, true);
-          $fuli = $contentArr['fuli'];
-          //$this->info($peizhi);
-          $contentArr['fuli'] = explode("|", $fuli);
-          $contentJson = json_encode($contentArr);
-          CollectDataModel::create(['item' => $row->first()->item,
-                                    'province' => $province->first()->name,
-                                    'city' => $row->first()->city,
-                                    'content' => $contentJson
-                                  ]);
-          $this->info('created');
+      //     $content = $row->first()->content;
+      //     $contentArr = json_decode($content, true);
+      //     $fuli = $contentArr['fuli'];
+      //     //$this->info($peizhi);
+      //     $contentArr['fuli'] = explode("|", $fuli);
+      //     $contentJson = json_encode($contentArr);
+      //     CollectDataModel::create(['item' => $row->first()->item,
+      //                               'province' => $province->first()->name,
+      //                               'city' => $row->first()->city,
+      //                               'content' => $contentJson
+      //                             ]);
+      //     $this->info('created');
             
-          $this->info("done----->：".$i);
-        }
+      //     $this->info("done----->：".$i);
+      //   }
        // neizhi1 租房配置 字符串->数组 49967-102775
       // for ($i=49967; $i <= 102775; $i++) { 
       //     $row = CollectDataModel::where('id', $i)->where('item','neizhi1')->get();
@@ -139,25 +139,25 @@ class ProvinceToName extends Command
         // }
         // $this->info("done-----------------------------------------------");
 
-        // 省份id 转 省份名称 集中存入数据库
-        // for ($i=11719; $i <= 15121; $i++) { 
-        //   $row = CollectData1Model::where('id', $i)->get();
-        //   if ($row->isEmpty()) {
-        //     continue;
-        //   }
-        //   $provinceId = $row->first()->province;
-        //   $province = CityModel::where('id', $provinceId)->get();
-        //   if ($province->isEmpty()) {
-        //     continue;
-        //   }
-        //   CollectDataModel::create(['item' => $row->first()->item,
-        //                             'province' => $province->first()->name,
-        //                             'city' => $row->first()->city,
-        //                             'content' => $row->first()->content
-        //                           ]);
-        //   //$row->first()->update(['province' => $province->first()->name]);
-        //   $this->info("done----->：".$i);
-        // }
+        // 省份id 转 省份名称 集中存入数据库17109
+        for ($i=17111; $i <= 38870; $i++) { 
+          $row = CollectData1Model::where('id', $i)->get();
+          if ($row->isEmpty()) {
+            continue;
+          }
+          $provinceId = $row->first()->province;
+          $province = CityModel::where('id', $provinceId)->get();
+          if ($province->isEmpty()) {
+            continue;
+          }
+          CollectDataModel::create(['item' => $row->first()->item,
+                                    'province' => $province->first()->name,
+                                    'city' => $row->first()->city,
+                                    'content' => $row->first()->content
+                                  ]);
+          //$row->first()->update(['province' => $province->first()->name]);
+          $this->info("done----->：".$i);
+        }
         // $this->info("done all");
       //   //转义
       //   function unescape($str) {
