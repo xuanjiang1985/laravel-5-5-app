@@ -7,6 +7,7 @@ use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 use App\Console\Commands\AddressCommand;
 use App\Console\Commands\ProvinceToName;
 use App\Console\Commands\FriendStore;
+use App\Console\Commands\GetCurrentCityArray;
 
 
 class Kernel extends ConsoleKernel
@@ -19,7 +20,8 @@ class Kernel extends ConsoleKernel
     protected $commands = [
         AddressCommand::class,
         ProvinceToName::class,
-        FriendStore::class
+        FriendStore::class,
+        GetCurrentCityArray::class
     ];
 
     /**

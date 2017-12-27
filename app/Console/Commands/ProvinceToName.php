@@ -140,7 +140,7 @@ class ProvinceToName extends Command
         // $this->info("done-----------------------------------------------");
 
         // 省份id 转 省份名称 集中存入数据库17109
-        for ($i=17111; $i <= 38870; $i++) { 
+        for ($i=1; $i <= 417; $i++) { 
           $row = CollectData1Model::where('id', $i)->get();
           if ($row->isEmpty()) {
             continue;
@@ -153,12 +153,14 @@ class ProvinceToName extends Command
           CollectDataModel::create(['item' => $row->first()->item,
                                     'province' => $province->first()->name,
                                     'city' => $row->first()->city,
+                                    'area' => $row->first()->area,
                                     'content' => $row->first()->content
                                   ]);
           //$row->first()->update(['province' => $province->first()->name]);
           $this->info("done----->：".$i);
         }
         // $this->info("done all");
+      // 同城交友
       //   //转义
       //   function unescape($str) {
       //     return json_decode('"'.str_replace('%', '\\', $str).'"');
