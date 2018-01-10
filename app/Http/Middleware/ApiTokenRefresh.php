@@ -28,7 +28,7 @@ class ApiTokenRefresh extends BaseMiddleware
         }
 
         // send the refreshed token back to the client
-        //$response->headers->set('Authorization', 'Bearer '.$newToken);
+        //return $response->headers->set('Authorization', 'Bearer '.$newToken);
 
         return response()->json(['msg' => '操作成功','code' => 0,'data' => ['token' => $newToken]]);
     }

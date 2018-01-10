@@ -247,13 +247,13 @@ class TestController extends Controller
     }
 
     public function ganji()
-    {
-       $data = CityModel::all();
-       foreach ($data as $key => $value) {
-         $value->update(['address_ganji' => $value->address_baixing]);
+    { 
+       try {
+          throw new \Exception("Value must be 1 or below");
+       } catch(\Exception $e) {
+          print("hello");
        }
-
-       return 1;
+       
     }
   
 }

@@ -12,6 +12,7 @@
 */
 // 前台
 Route::get('/test', 'TestController@ganji');
+Route::get('/alg', 'AlgController@index');
 Route::get('/city', 'TestController@cityedit');
 Route::get('/city/{id}', 'TestController@cityget');
 Route::get('/district/{id}', 'TestController@districtget');
@@ -19,7 +20,7 @@ Route::get('/districtupdate', 'TestController@districtupdate');
 Route::get('/friend/{city}', 'TestController@collectFriend');
 Route::get('/provincetoname', 'TestController@provinceToName');
 Route::get('/', function () {
-    return 1;
+    return 123;
 });
 Route::get('/login', 'LoginController@getLogin');
 

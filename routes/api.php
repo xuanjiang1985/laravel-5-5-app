@@ -2,8 +2,6 @@
 
 //api
 Route::post('/api/auth', 'JWTController@auth');
-Route::get('api/token/refresh')->middleware('jwt.refresh');
 Route::prefix('api/v1')->middleware(['jwt.auth'])->group(function(){
 	Route::get('/user', 'JWTController@user');
 });
-
