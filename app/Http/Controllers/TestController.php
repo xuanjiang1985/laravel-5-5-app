@@ -252,6 +252,7 @@ class TestController extends Controller
           throw new \Exception("Value must be 1 or below");
        } catch(\Exception $e) {
           print("hello");
+          Log::info();
        }
        
     }
