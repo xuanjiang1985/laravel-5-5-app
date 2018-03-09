@@ -29,13 +29,13 @@ class AlgController extends Controller
         //       //dd($fruits);
         //       list($a, $b, $c) = $num;
         //       dd(touch('test.txt'));
-        try {
-            $file = fopen(public_path() . "/test.txt", "a") or die("not found");
-            fwrite($file, "zhougang1111\n");
-            fclose($file);
-        } catch (\Exception $e) {
-            return $e->getMessage();
-        }
-        return "done";
+        // try {
+        //     $file = fopen(public_path() . "/test.txt", "a") or die("not found");
+        //     fwrite($file, "zhougang1111\n");
+        //     fclose($file);
+        // } catch (\Exception $e) {
+        //     return $e->getMessage();
+        // }
+        echo phpinfo();
     }
 }
