@@ -28,8 +28,8 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        $schedule->command('TestCommand')
-            ->hourly();
+        $schedule->command('hash:make')
+                    ->everyMinute();
     }
 
     /**

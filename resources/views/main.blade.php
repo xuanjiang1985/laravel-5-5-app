@@ -18,12 +18,12 @@
 </head>
 <body>
     <header class="alert alert-success">
-        header <i class="fa fa-clock-o"></i>
+      
     </header>
     @yield('content')
-    <footer class="alert alert-success" id="footer">
+    <!-- <footer class="alert alert-success" id="footer">
         footer
-    </footer>
+    </footer> -->
     <div id="ajax-status"> </div>
     <div id="back-to-top"><span class="fa fa-arrow-up fa-3x"></span></div>
 </body>

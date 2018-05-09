@@ -3,6 +3,7 @@
 namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
+use DB;
 
 class TestCommand extends Command
 {
@@ -11,14 +12,14 @@ class TestCommand extends Command
      *
      * @var string
      */
-    protected $signature = 'command:test';
+    protected $signature = 'debug';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'test for code';
+    protected $description = 'make hash value test';
 
     /**
      * Create a new command instance.
@@ -37,6 +38,10 @@ class TestCommand extends Command
      */
     public function handle()
     {
-        $this->info("hello world\n");
+        // $start = 201804;
+        // dd($start.'00');
+        $start = strtotime('20180401');
+        $end = strtotime('20180401'.'+1 month -1 day');
+       dd($start, date('Ymd H:i:s',$start), $end, date('Ymd H:i:s', $end));
     }
 }

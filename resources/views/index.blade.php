@@ -5,157 +5,111 @@
 @endsection
 @section('keywords')
 <meta name="keywords" content="index page">
+<meta name="csrf-token" content="{{ csrf_token() }}">
 @endsection
 @section('description')
 <meta name="description" content="home page">
 @endsection
 
 @section('content')
-<style type="text/css">
-	.collect {margin-bottom: 5px; }
-</style>
 <div class="container">
-	<div class="row">
-		<div class="col-sm-3 text-center">省份</div>
-		<div class="col-sm-3 text-center">市</div>
-		<div class="col-sm-3 text-center">区/县</div>
-	</div>
-	<br>
-	<div class="row">
-		<div class="col-sm-3">
-			<select class="form-control" id="province">
-				<option value="0" >请选择省份</option>
-				@foreach($province as $item)
-				<option value="{{$item->id}}">{{$item->name}}</option>
-				@endforeach
-			</select>
-		</div>
-		<div class="col-sm-3">
-			<select class="form-control" id="city">
-				<option value="0" >请选择市</option>
-			</select>
-		</div>
-		<div class="col-sm-6" id="district">
-			<p><input type="text" name="" value=""></p>
-		</div>
-	</div>
-	<br><br><br>
-	<div class="row">
-		<div class="col-sm-3">
-			<select class="form-control" id="province2">
-				<option value="0" >请选择省份</option>
-				@foreach($province as $item)
-				<option value="{{$item->id}}">{{$item->name}}</option>
-				@endforeach
-			</select>
-		</div>
-		<div class="col-sm-3">
-			<div id="city2">
-				
-			</div>
-		</div>
-		<div class="col-sm-6" id="district2">
-		
-		</div>
-	</div>
-	<br>
-</div>
+    <div class="content">
+        <div class="show-area"></div>
+        <div class="write-area">
+            <div><input name="name" id="name" type="text" placeholder="input your name" required="required"></div>
+            <div>
+                <input name="message" id="message" required="required" placeholder="input your message...">
+            </div>   
+            <div><button class="btn btn-default send">发送</button></div>
+            <div><button class="btn btn-success rec">重连</button></div>                 
+        </div>
+    </div>
+ </div>
 	@push('scripts')
 	    <script>
-	    	$("#province").change(function(){
-	    		var id = $(this).val();
-	    		$.ajax({
-	    			type: 'get',
-	    			url: '/city/' + id,
-	    			dataType: 'json',
-	    			success: function(data) {
-	    				$option = '<option value="0" >请选择市</option>';
-	    				$.each(data, function(index, value) {
-	    					$option += '<option value="' + value.id + '" >' + value.name + ' | ' + value.id + ' | ' + value.address_baixing +'</option>';
-	    				});
-	    				$("#city").html($option);
-	    			},
-	    			error: function(data) {
-	    				alert("服务器错误");
-	    			}
-	    		})
-	    	});
+	    	//websocket
+    $(function(){
+            var wsurl = 'ws://localhost:6001/echo?channels=public,econo';
+            var websocket;
+            var i = 0;
 
-	    	$("#province2").change(function(){
-	    		var id = $(this).val();
-	    		$.ajax({
-	    			type: 'get',
-	    			url: '/city/' + id,
-	    			dataType: 'json',
-	    			success: function(data) {
-	    				$option = '';
-	    				$.each(data, function(index, value) {
-	    					$option += '<button class="btn btn-primary collect" data-value="' + value.address_baixing +'">' + value.name + ' | ' + value.id + ' | ' + value.address_baixing + '</button>';
-	    				});
-	    				$("#city2").html($option);
-	    			},
-	    			error: function(data) {
-	    				alert("服务器错误");
-	    			}
-	    		})
-	    	});
-	    	$("#city2").on("click", ".collect", collect);
-	    	function collect() {
-	    		var city = $(this).data("value");
-	    		$("#district2").html("正在爬取" + city +".baixing.com ...");
-	    		$.ajax({
-	    			type: 'get',
-	    			url: '/district`/' + id,
-	    			dataType: 'json',
-	    			data: {city: city},
-	    			success: function(data) {
-	    				$option = '';
-	    				$.each(data, function(index, value) {
-	    					$option += '<p>' + value.name + ' <input type="text" class="jinput" value="' + value.address_baixing + '" id="' + value.id + '"></p>';
-	    				});
-	    				$("#district").html($option);
-	    			},
-	    			error: function(data) {
-	    				console.log("服务器错误");
-	    			}
-	    		})
-	    	}
+                websocket = new WebSocket(wsurl);
 
-	    	$("#city").change(function(){
-	    		var id = $(this).val();
-	    		$.ajax({
-	    			type: 'get',
-	    			url: '/district/' + id,
-	    			dataType: 'json',
-	    			success: function(data) {
-	    				$option = '';
-	    				$.each(data, function(index, value) {
-	    					$option += '<p>' + value.name + ' <input type="text" class="jinput" value="' + value.address_baixing + '" id="' + value.id + '"></p>';
-	    				});
-	    				$("#district").html($option);
-	    			},
-	    			error: function(data) {
-	    				console.log("服务器错误");
-	    			}
-	    		})
-	    	});
-	    	$("#district").on("blur", ".jinput", update);
-	    	function update() {
-	    		const id = $(this).attr("id");
-	    		const value = $(this).val();
-	    		$.ajax({
-	    			type: 'get',
-	    			url: '/districtupdate',
-	    			dataType: 'json',
-	    			data: {id: id, value: value},
-	    			success: function(data) {
-	    				$('#ajax-status').show().html('<span class="text-white">更新成功</span>').fadeOut(1000);
-	    			},
-	    			error: function(data) {
-	    				console.log("服务器错误");
-	    			}
-	    		})
-	    	}
+                //连接建立
+                websocket.onopen = function(evevt){
+                    console.log("Connected to WebSocket server.");
+                    $('.show-area').append('<p class="bg-info message"><i class="icon-cog"></i>Connected to WebSocket server!</p>');
+                }
+                //收到消息
+                websocket.onmessage = function(event) {
+                    var msg = JSON.parse(event.data); //解析收到的json消息数据
+                    console.log(msg);
+                    var type = msg.type; // 消息类型
+                    var umsg = msg.event; //消息文本
+                    var uname = msg.data.token; //发送人
+                    i++;
+                    //if(type == 'usermsg'){
+                        $('.show-area').append('<p class="bg-success message"><a name="'+i+'"></a><span class="label label-info">'+uname+':</span>&nbsp;'+umsg+'</p>');
+                    //}
+                    // if(type == 'system'){
+                    //     $('.show-area').append('<p class="bg-warning message"><a name="'+i+'"></a><i class="icon-cog"></i>'+umsg+'</p>');
+                    // }
+                    
+                    //$('#message').val(''); 
+                    //window.location.hash = '#'+i;
+                }
+
+                //发生错误
+                websocket.onerror = function(event){
+                    i++;
+                    console.log("Connected to WebSocket server error");
+                    $('.show-area').append('<p class="bg-danger message"><a name="'+i+'"></a><i class="icon-cog"></i>Connect to WebSocket server error.</p>');
+                    window.location.hash = '#'+i;
+                }
+
+                //连接关闭
+                websocket.onclose = function(event){
+                    i++;
+                    console.log('websocket Connection Closed. ');
+                    $('.show-area').append('<p class="bg-warning message"><a name="'+i+'"></a><i class="icon-cog"></i>websocket Connection Closed.</p>');
+                    window.location.hash = '#'+i;
+                }
+
+                function send(){
+                    var name = $('#name').val();
+                    var message = $('#message').val();
+                    if(!name){
+                        alert('请输入用户名!');
+                        return false;
+                    }
+                    if(!message){
+                        alert('发送消息不能为空!');
+                        return false;
+                    }
+                    var msg = {
+                        message: message,
+                        name: name
+                    };
+                    try{  
+                        websocket.send(JSON.stringify(msg)); 
+                    } catch(ex) {  
+                        console.log(ex);
+                    }  
+                }
+
+                //按下enter键发送消息
+                $(window).keydown(function(event){
+                    if(event.keyCode == 13){
+                        console.log('user enter');
+                        send();
+                    }
+                });
+
+                //点发送按钮发送消息
+                $('.send').bind('click',function(){
+                    send();
+                });            
+}); 
 	    </script>
 	@endpush
 @endsection

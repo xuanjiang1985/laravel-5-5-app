@@ -13,18 +13,19 @@
 // 前台
 Route::get('/test', 'TestController@ganji');
 Route::get('/alg', 'AlgController@index');
-Route::get('/city', 'TestController@cityedit');
-Route::get('/city/{id}', 'TestController@cityget');
-Route::get('/district/{id}', 'TestController@districtget');
-Route::get('/districtupdate', 'TestController@districtupdate');
-Route::get('/friend/{city}', 'TestController@collectFriend');
-Route::get('/provincetoname', 'TestController@provinceToName');
+Route::get('/qr', 'AlgController@getQr');
+Route::post('/qr/store', 'AlgController@storeQr');
+Route::get('/qr/sort/{id}', 'AlgController@sortQr');
+Route::get('/algws', 'AlgController@broadcast');
+// Route::get('/city', 'TestController@cityedit');
+// Route::get('/city/{id}', 'TestController@cityget');
+// Route::get('/district/{id}', 'TestController@districtget');
+// Route::get('/districtupdate', 'TestController@districtupdate');
+// Route::get('/friend/{city}', 'TestController@collectFriend');
+// Route::get('/provincetoname', 'TestController@provinceToName');
 Route::get('/', function () {
-    return 123;
+    echo phpinfo();
 });
 Route::get('/login', 'LoginController@getLogin');
-
-//api 
-require 'api.php';
 //后台
 require 'admin.php';
