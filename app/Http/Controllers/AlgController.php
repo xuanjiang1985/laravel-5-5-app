@@ -6,12 +6,14 @@ use Illuminate\Http\Request;
 use DB;
 use App\Events\WechatLoginedEven;
 use Validator;
+use App\Jobs\StoreLogJob;
 
 class AlgController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
     	$count = DB::table('hash_table_count')->first()->sum;
+        StoreLogJob::dispatch($request->ip().' 访问了网站');
         return '已计算了哈希'.$count.'次。';
     }
 

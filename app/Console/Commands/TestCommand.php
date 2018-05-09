@@ -4,6 +4,8 @@ namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
 use DB;
+use App\Services\LogService;
+use App\Jobs\StoreLogJob;
 
 class TestCommand extends Command
 {
@@ -19,7 +21,7 @@ class TestCommand extends Command
      *
      * @var string
      */
-    protected $description = 'make hash value test';
+    protected $description = 'just test';
 
     /**
      * Create a new command instance.
@@ -38,10 +40,6 @@ class TestCommand extends Command
      */
     public function handle()
     {
-        // $start = 201804;
-        // dd($start.'00');
-        $start = strtotime('20180401');
-        $end = strtotime('20180401'.'+1 month -1 day');
-       dd($start, date('Ymd H:i:s',$start), $end, date('Ymd H:i:s', $end));
+        StoreLogJob::dispatch('这个是未来测试');
     }
 }
