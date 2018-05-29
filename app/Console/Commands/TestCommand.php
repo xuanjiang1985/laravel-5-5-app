@@ -40,6 +40,6 @@ class TestCommand extends Command
      */
     public function handle()
     {
-        StoreLogJob::dispatch('这个是未来测试');
+        dd(empty(null));
     }
 }
