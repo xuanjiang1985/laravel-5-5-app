@@ -7,14 +7,31 @@ use DB;
 use App\Events\WechatLoginedEven;
 use Validator;
 use App\Jobs\StoreLogJob;
+use TeamTNT\TNTSearch\TNTSearch;
 
 class AlgController extends Controller
 {
+
     public function index(Request $request)
     {
-    	$count = DB::table('hash_table_count')->first()->sum;
-        StoreLogJob::dispatch($request->ip().' 访问了网站');
-        return '已计算了哈希'.$count.'次。';
+    	$config = [
+            'driver'    => 'mysql',
+            'host'      => env('DB_HOST'),
+            'database'  => env('DB_DATABASE'),
+            'username'  => env('DB_USERNAME'),
+            'password'  => env('DB_PASSWORD'),
+            'storage'   => storage_path()
+        ];
+
+        $tnt = new TNTSearch;
+
+        $tnt->loadConfig($config);
+        $tnt->selectIndex("article.index");
+
+        //this will return all documents that have romeo in it but not juliet
+        $res = $tnt->search("tnt laravel");
+        dd($res);
+
     }
 
     public function broadcast()

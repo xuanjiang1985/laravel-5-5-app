@@ -18,6 +18,7 @@ class Kernel extends ConsoleKernel
         Commands\GetCurrentCityArray::class,
         Commands\ProvinceToName::class,
         Commands\TestCommand::class,
+        Commands\TNTindex::class,
     ];
 
     /**
