@@ -5,7 +5,7 @@
 		<meta name="description" content="">
 	    <meta name="keywords" content="">
 	    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-		<title>联系</title>
+		<title>测试</title>
 	    <meta name="renderer" content="webkit">
 	    <meta http-equiv="Cache-Control" content="no-siteapp">
 	    <meta name="mobile-web-app-capable" content="yes">
@@ -54,7 +54,7 @@
                 width: 1px;
                 height: 12px;
                 background: #8e4912;
-                transform: rotate(318deg);
+                transform: rotate(48deg);
                 -webkit-transform: rotate(48deg);
             }
             
@@ -81,7 +81,7 @@
                 width: 1px;
                 height: 12px;
                 background: #8e4912;
-                transform: rotate(318deg);
+                transform: rotate(228deg);
                 -webkit-transform: rotate(228deg);
             }
             
@@ -103,39 +103,164 @@
             
             .close span {
                 position: relative;
-                padding: 0.3rem 0;
-                padding-left: 0.3rem; 
-                padding-right: 1.5rem;
+                padding: 0.1rem 0;
+                padding-left: 0.1rem;
+                padding-right: 0.6rem;
             }
+            
             .close i {
                 position: absolute;
-                right: 0.7rem;
+                right: 0.3rem;
                 width: 2px;
                 height: 18px;
                 background: #8e4912;
-                transform: rotate(318deg);
-                -webkit-transform: rotate(41deg);
+                transform: rotate(45deg);
+                -webkit-transform: rotate(45deg);
             }
             
             .close i:after {
                 content: "";
                 position: absolute;
+                left: 0;
+                top: 0;
                 width: 2px;
                 height: 18px;
                 background: #8e4912;
-                transform: rotate(83deg);
-                -webkit-transform: rotate(100deg);
+                transform: rotate(270deg);
+                -webkit-transform: rotate(270deg);
             }
+
+            .minus {
+                position: relative;
+                text-align: center;
+            }
+
+            .minus i {
+                position: absolute;
+                right: 2.5rem;
+                width: 2px;
+                height: 0.3rem;
+                background: #8e4912;
+                transform: rotate(90deg);
+                -webkit-transform: rotate(90deg);
+            }
+
+            .plus {
+                position: relative;
+                text-align: center;
+            }
+
+            .plus i {
+                position: absolute;
+                right: 2.5rem;
+                width: 2px;
+                height: 0.3rem;
+                background: #8e4912;
+                transform: rotate(90deg);
+                -webkit-transform: rotate(90deg);
+            }
+
+            .plus i:after {
+                content: "";
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 2px;
+                height: 0.3rem;
+                background: #8e4912;
+                transform: rotate(90deg);
+                -webkit-transform: rotate(90deg);
+            }
+
+            .choose {
+                position: relative;
+                text-align: center;
+            }
+
+            .choose i {
+                position: absolute;
+                right: 2.5rem; 
+                top: 0.3rem;
+                width: 10px;
+                height: 3px; 
+                background: red;
+                line-height: 0;
+                font-size:0;
+                vertical-align: middle;
+                transform: rotate(45deg);
+                -webkit-transform: rotate(45deg);
+            }
+
+            .choose i:after {
+                content:'';
+                display:block;
+                width: 20px;
+                height:3px; 
+                background: red;
+                transform: rotate(-90deg) translateY(-50%) translateX(50%);
+                -webkit-transform: rotate(-90deg) translateY(-50%) translateX(50%);
+            }
+
+            .arrow-right {
+                width: 0;
+                height: 0;
+                border-top: 0.5rem solid transparent;
+                border-left: 0.5rem solid #ff0000;
+                border-bottom: 0.5rem solid transparent;
+            }
+
+            .arrow-left {
+                width: 0;
+                height: 0;
+                border-top: 0.5rem solid transparent;
+                border-right: 0.5rem solid #ff0000;
+                border-bottom: 0.5rem solid transparent;
+            }
+
+            .arrow-top {
+                width: 0;
+                height: 0;
+                border-left: 0.5rem solid transparent;
+                border-right: 0.5rem solid transparent;
+                border-bottom: 0.5rem solid  #ff0000;
+            }
+
+            .arrow-bottom {
+                width: 0;
+                height: 0;
+                border-left: 0.5rem solid transparent;
+                border-right: 0.5rem solid transparent;
+                border-top: 0.5rem solid  #ff0000;
+            }
+
     </style>
 	</head>
     <body>
         <div class="all-list">Top<i></i></div>
+        <br>
         <div class="right">Right<i></i></div>
+        <br>
         <div class="left">Left<i></i></div>
         <br>
         <div class="close">
             <span data-name="close"><i></i></span>
         </div>
+        <br>
+        <div class="minus">Minus<i></i></div>
+        <br>
+        <div class="plus">Plus<i></i></div>
+        <br>
+        <div class="choose">Choose<i></i></div>
+        <br>
+        <div class="arrow-right"><i></i></div>
+        <br>
+        <div class="arrow-left"><i></i></div>
+
+        <br>
+        <div class="arrow-top"><i></i></div>
+
+        <br>
+        <div class="arrow-bottom"><i></i></div>
     </body>
     <script src="/js/jquery-1.12.4.min.js"></script>
     <script>
