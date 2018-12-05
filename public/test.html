@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="description" content="">
+	    <meta name="keywords" content="">
+	    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+		<title>联系</title>
+	    <meta name="renderer" content="webkit">
+	    <meta http-equiv="Cache-Control" content="no-siteapp">
+	    <meta name="mobile-web-app-capable" content="yes">
+	    <meta name="apple-mobile-web-app-capable" content="yes">
+	    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+	    <meta name="format-detection" content="telephone=no" />
+        <script type="text/javascript" src="/js/flexible.js" ></script>
+        <style>
+            .all-list {
+                text-align: center;
+                position: relative;
+                color: #8e4912;
+            }
+            
+            .all-list i {
+                position: absolute;
+                top: 0.05rem;
+                right: 2.5rem;
+                width: 1px;
+                height: 12px;
+                background: #8e4912;
+                transform: rotate(318deg);
+                -webkit-transform: rotate(318deg);
+            }
+            
+            .all-list i:after {
+                content: "";
+                position: absolute;
+                width: 1px;
+                height: 10px;
+                left: -6px;
+                top: -3px;
+                background: #8e4912;
+                transform: rotate(83deg);
+                -webkit-transform: rotate(83deg);
+            }
+
+            .right {
+                text-align: center;
+                color:black;
+            }
+
+            .right i {
+                position: absolute;
+                right: 2.5rem;
+                width: 1px;
+                height: 12px;
+                background: #8e4912;
+                transform: rotate(318deg);
+                -webkit-transform: rotate(48deg);
+            }
+            
+            .right i:after {
+                content: "";
+                position: absolute;
+                width: 1px;
+                height: 10px;
+                left: -6px;
+                top: -3px;
+                background: #8e4912;
+                transform: rotate(83deg);
+                -webkit-transform: rotate(83deg);
+            }
+
+            .left {
+                text-align: center;
+                color:black;
+            }
+
+            .left i {
+                position: absolute;
+                right: 2.5rem;
+                width: 1px;
+                height: 12px;
+                background: #8e4912;
+                transform: rotate(318deg);
+                -webkit-transform: rotate(228deg);
+            }
+            
+            .left i:after {
+                content: "";
+                position: absolute;
+                width: 1px;
+                height: 10px;
+                left: -6px;
+                top: -3px;
+                background: #8e4912;
+                transform: rotate(83deg);
+                -webkit-transform: rotate(83deg);
+            }  
+            
+            .close {
+                text-align: right;
+            }
+            
+            .close span {
+                position: relative;
+                padding: 0.3rem 0;
+                padding-left: 0.3rem; 
+                padding-right: 1.5rem;
+            }
+            .close i {
+                position: absolute;
+                right: 0.7rem;
+                width: 2px;
+                height: 18px;
+                background: #8e4912;
+                transform: rotate(318deg);
+                -webkit-transform: rotate(41deg);
+            }
+            
+            .close i:after {
+                content: "";
+                position: absolute;
+                width: 2px;
+                height: 18px;
+                background: #8e4912;
+                transform: rotate(83deg);
+                -webkit-transform: rotate(100deg);
+            }
+    </style>
+	</head>
+    <body>
+        <div class="all-list">Top<i></i></div>
+        <div class="right">Right<i></i></div>
+        <div class="left">Left<i></i></div>
+        <br>
+        <div class="close">
+            <span data-name="close"><i></i></span>
+        </div>
+    </body>
+    <script src="/js/jquery-1.12.4.min.js"></script>
+    <script>
+        $('.close span').click(function(){
+            alert(1);
+        });
+    </script>
+</html>

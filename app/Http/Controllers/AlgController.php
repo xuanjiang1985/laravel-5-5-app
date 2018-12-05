@@ -8,11 +8,12 @@ use App\Events\WechatLoginedEven;
 use Validator;
 use App\Jobs\StoreLogJob;
 use TeamTNT\TNTSearch\TNTSearch;
+use App\Services\LogService;
 
 class AlgController extends Controller
 {
 
-    public function index(Request $request)
+    public function index2(Request $request)
     {
     	$config = [
             'driver'    => 'mysql',
@@ -32,6 +33,12 @@ class AlgController extends Controller
         $res = $tnt->search("tnt laravel");
         dd($res);
 
+    }
+
+    public function index()
+    {
+        $logService = new LogService();
+        return $logService->getCode();
     }
 
     public function broadcast()

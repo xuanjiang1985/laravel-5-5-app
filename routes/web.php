@@ -11,7 +11,6 @@
 |
 */
 // 前台
-Route::get('/test', 'TestController@ganji');
 Route::get('/alg', 'AlgController@index');
 Route::get('/qr', 'AlgController@getQr');
 Route::post('/qr/store', 'AlgController@storeQr');
@@ -24,7 +23,10 @@ Route::get('/algws', 'AlgController@broadcast');
 // Route::get('/friend/{city}', 'TestController@collectFriend');
 // Route::get('/provincetoname', 'TestController@provinceToName');
 Route::get('/', function () {
-    echo phpinfo();
+    echo 'I am running in nginx-phpfpm docker3';
+});
+Route::get('/test2', function() {
+    return view('index');
 });
 Route::get('/login', 'LoginController@getLogin');
 //后台

@@ -2,19 +2,30 @@
 
 namespace App\Services;
 
-use Log;
-
 class LogService extends BaseService
 {
-	public function storeLog($str = '')
+	private $code = 123123;
+	const STATE = 3;
+	const RELATION = [
+        '爸爸',
+        '妈妈',
+        '爷爷',
+    ];
+	static public function storeLog($str = '')
 	{
 		try {
-			Log::info($str);
+			info($str);
 			return true;
 
 		} catch (\Exception $e) {
-			return $this->sendErrorMessage(false, 1001, '添加失败', $e->getMessage());
+			return 0;
 		}
 
-	}	
+	}
+
+	public function getCode()
+	{
+		return SELF::STATE;
+	}
+	
 }
